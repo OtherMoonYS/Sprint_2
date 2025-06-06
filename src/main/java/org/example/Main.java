@@ -18,8 +18,8 @@ public class Main {
         Food[] items = {meat, red, green};
         var cart = new ShoppingCard(items);
 
-        System.out.println("Общая сумма товаров без скидки: " + cart.totalPrice());
-        System.out.println("Общая сумма всех товаров со скидкой: " + cart.discountPrice());
-        System.out.println("Общая сумма всех вегатерианских продуктов без скидки: " + cart.vegetarianPrice());
+        System.out.println(String.format("Общая сумма товаров без скидки: ", cart.totalPrice()));
+        System.out.println(String.format("Общая сумма всех товаров со скидкой: ", cart.discountPrice()));
+        System.out.println(String.format("Общая сумма всех вегатерианских продуктов без скидки: ", cart.vegetarianPrice()));
     }
 }
