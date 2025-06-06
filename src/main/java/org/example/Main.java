@@ -1,17 +1,25 @@
 package org.example;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+
+import model.Apple;
+import model.Food;
+import model.Meat;
+import model.constants.Colour;
+import model.constants.Discount;
+import model.service.ShoppingCard;
+
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        var meat = new Meat(100, 5);
+        var red = new Apple(10, 50, Colour.RED);
+        var green = new Apple(8, 60, Colour.GREEN);
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        Food[] items = {meat, red, green};
+        var cart = new ShoppingCard(items);
+
+        System.out.println("Общая сумма товаров без скидки: " + cart.totalPrice());
+        System.out.println("Общая сумма всех товаров со скидкой: " + cart.discountPrice());
+        System.out.println("Общая сумма всех вегатерианских продуктов без скидки: " + cart.vegetarianPrice());
     }
 }
